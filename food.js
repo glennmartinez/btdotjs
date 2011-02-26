@@ -11,6 +11,6 @@ app.configure(function () {
     app.use(app.router);
     app.use(e.staticProvider(__dirname + '/static'));
 	app.set('views', __dirname + '/views');
-    app.use(e.errorHandler({ dumpExceptions: true, showStack: true }));
+    app.use(e.errorHandler({ dumpExceptions: false, showStack: false }));
 
 });
