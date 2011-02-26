@@ -14,4 +14,10 @@ app.get('/test/:id', function (req, res, next) {
 app.get('/p/schedule', function(req, res, next) {
 	res.writeHead(301, {'Location' : 'http://goo.gl/h0RWL'});
 	res.end();
-})
+});
+// All roads lead to rome
+app.get('/p/:id', allPurpose);
+function allPurpose(req, res, next) {
+	res.writeHead(301, {'Location' : '/'});
+	res.end();
+}
