@@ -9,3 +9,9 @@ app.get('/test/:id', function (req, res, next) {
 	console.log('User accessed: ' + id);
 	res.render('test.ejs', render_payload);
 });
+
+// Lets do some redirects
+app.get('/p/schedule', function(req, res, next) {
+	res.writeHead(301, {'Location' : 'http://goo.gl/h0RWL'});
+	res.end();
+})
