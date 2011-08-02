@@ -1,0 +1,5 @@
+hello:
+  desc: "Tab stops must be at 2 or this will not render!"
+  en: "Hello"
+  fr: "Bonjour"
+  ja: "こにちは"

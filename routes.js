@@ -1,3 +1,21 @@
+var yaml = require('yaml');
+var fs = require('fs');
+
+app.get('/yamltest', function(req, res) {
+    fs.readFile('test.yaml', function(err, data) {
+        res.header('Content-Type', 'application/json');
+        if (err) {
+            res.send('{error: \'An error has occured reading the file\'}');
+        } else {
+			try {
+            	res.send(JSON.stringify(yaml.eval(data.toString('utf-8'))));				
+			} catch (e) {
+            	res.send('{error: \'An error has occured parsing the file\'}');				
+			}
+        }
+    });
+});
+
 app.get('/test/:id', function (req, res, next) {
 	var id = req.params.id;
 	var render_payload;
