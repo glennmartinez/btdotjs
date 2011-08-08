@@ -16,6 +16,14 @@ app.get('/yamltest', function(req, res) {
     });
 });
 
+// Google+ Link
+app.get('/%2B', function(req, res) {
+	res.redirect('https://plus.google.com/113408318000356722001');
+});
+app.get('/plus', function(req, res) {
+	res.redirect('https://plus.google.com/113408318000356722001');
+});
+
 app.get('/test/:id', function (req, res, next) {
 	var id = req.params.id;
 	var render_payload;
